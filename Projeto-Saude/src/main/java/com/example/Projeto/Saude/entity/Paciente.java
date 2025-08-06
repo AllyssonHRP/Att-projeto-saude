@@ -20,6 +20,11 @@ public class Paciente {
     private String nome;
     private Boolean ativo;
 
+    private String password;
+
+    private boolean isMfaEnabled;
+    private String secret;
+
     private String nomeMae;
     private String nomePai;
     private LocalDate dataNascimento;

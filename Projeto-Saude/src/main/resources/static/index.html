@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-T">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Autenticação 2FA</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 500px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px; }
+        .hidden { display: none; }
+        input { width: 95%; padding: 8px; margin-bottom: 10px; }
+        button { padding: 10px 15px; cursor: pointer; }
+        #qrCode img { border: 1px solid #000; }
+        #messages { margin-top: 15px; color: green; font-weight: bold; }
+        #error-messages { margin-top: 15px; color: red; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Projeto Saúde - Teste 2FA</h1>
+
+        <div id="register-section">
+            <h2>Registrar Novo Paciente</h2>
+            <form id="register-form">
+                <input type="text" id="register-nome" placeholder="Nome Completo" required>
+                <input type="email" id="register-email" placeholder="Email" required>
+                <input type="password" id="register-password" placeholder="Senha" required>
+                <button type="submit">Registrar</button>
+            </form>
+            <p>Já tem uma conta? <a href="#" onclick="showSection('login-section')">Faça o login</a></p>
+        </div>
+
+        <div id="login-section" class="hidden">
+            <h2>Login</h2>
+            <form id="login-form">
+                <input type="email" id="login-email" placeholder="Email" required>
+                <input type="password" id="login-password" placeholder="Senha" required>
+                <button type="submit">Entrar</button>
+            </form>
+             <p>Não tem conta? <a href="#" onclick="showSection('register-section')">Registre-se</a></p>
+        </div>
+        
+        <div id="mfa-setup-section" class="hidden">
+            <h2>Ativar Autenticação de 2 Fatores</h2>
+            <p>Escaneie o QR Code com seu app de autenticação (Google Authenticator, Authy, etc).</p>
+            <div id="qrCode"></div>
+            <p>Depois, insira o código de 6 dígitos para verificar:</p>
+            <form id="mfa-verify-form">
+                <input type="text" id="mfa-code" placeholder="Código de 6 dígitos" required>
+                <button type="submit">Verificar e Ativar</button>
+            </form>
+        </div>
+
+        <div id="mfa-login-section" class="hidden">
+            <h2>Verificação de 2 Fatores</h2>
+            <p>Insira o código do seu aplicativo autenticador.</p>
+            <form id="mfa-login-form">
+                <input type="text" id="mfa-login-code" placeholder="Código de 6 dígitos" required>
+                <button type="submit">Verificar Login</button>
+            </form>
+        </div>
+
+        <div id="success-section" class="hidden">
+            <h2>Login realizado com sucesso!</h2>
+            <p id="welcome-message"></p>
+            <button onclick="logout()">Logout</button>
+            <br><br>
+            <button id="setup-mfa-button">Ativar 2FA</button>
+        </div>
+
+        <div id="messages"></div>
+        <div id="error-messages"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
