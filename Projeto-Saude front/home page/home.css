@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('d81cb98c-8b4c-4cda-8d10-10182a203687.jfif'); /* arquivo que você enviou */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5); /* leve escurecimento */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  z-index: 10;
+}
+
+.content h1 {
+  font-size: 8rem;
+  margin-bottom: 45rem;
+}
+
+.slogan {
+  position: absolute;
+  top: 0;
+  font-size: 2rem;
+  margin-bottom: 12rem;
+  padding: 12rem 2rem;
+}
+
+
+.botton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: start;
+  color: #fff;
+  padding: 3rem;
+}
+
+.btn-acessar {
+  text-decoration: none;
+  background-color: #2a7f62;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 6px;
+  font-size: 2rem;
+  transition: background 0.3s;
+}
+
+.btn-acessar:hover {
+  background-color: #256d55;
+}

@@ -16,12 +16,9 @@ public interface PacienteRepository extends JpaRepository<Paciente, Long> {
 
     List<Paciente> findByNomeStartingWith(String nome);
 
-//    @Query(value = "SELECT a FROM Paciente a WHERE a.nome LIKE :nome%", nativeQuery = true)
-//    List<Paciente> findByNomeStartingWith(@Param("nome") String nome);
-
     @Query(value = "SELECT * FROM paciente a WHERE LOWER(a.nome) LIKE LOWER(CONCAT(:nome, '%'))", nativeQuery = true)
     List<Paciente> findByNomeStartingWithIgnoreCase(@Param("nome") String nome);
 
-    Optional<Object> findByEmail(String email);
+    Optional<Paciente> findByEmail(String email);
 }
 

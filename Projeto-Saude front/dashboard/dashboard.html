@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - Projeto Saúde</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="container">
+        <h2>Bem-vindo!</h2>
+        <p>Login realizado com sucesso.</p>
+        
+        <div id="mfa-activation">
+            <h3>Autenticação de 2 Fatores (2FA)</h3>
+            <button id="setup-mfa-button">Ativar 2FA</button>
+            <div id="qr-code-container" style="display:none; margin-top: 15px;">
+                <p>Escaneie o QR Code com seu app de autenticação:</p>
+                <img id="qr-code-image" src="" alt="QR Code">
+                <input type="text" id="mfa-code" placeholder="Digite o código de 6 dígitos">
+                <button id="verify-mfa-button">Verificar e Ativar</button>
+            </div>
+        </div>
+        
+        <button onclick="logout()">Logout</button>
+    </div>
+    <script src="dashboard.js"></script>
+</body>
+</html>

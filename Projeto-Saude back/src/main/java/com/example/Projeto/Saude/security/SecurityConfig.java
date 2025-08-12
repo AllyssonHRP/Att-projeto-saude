@@ -7,10 +7,11 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import com.github.hanshsieh.pixivjjfx.pkce.CodeVerifier;
-import dev.samstevens.totp.code.CodeGenerator;
-import dev.samstevens.totp.code.DefaultCodeGenerator;
+
+// Importe a classe correta
+import dev.samstevens.totp.code.CodeVerifier;
 import dev.samstevens.totp.code.DefaultCodeVerifier;
+import dev.samstevens.totp.code.DefaultCodeGenerator;
 import dev.samstevens.totp.code.HashingAlgorithm;
 import dev.samstevens.totp.time.SystemTimeProvider;
 import dev.samstevens.totp.time.TimeProvider;
@@ -20,21 +21,22 @@ import dev.samstevens.totp.time.TimeProvider;
 public class SecurityConfig {
 
     @Bean
-public CodeVerifier codeVerifier() {
-    TimeProvider timeProvider = new SystemTimeProvider();
-    CodeGenerator codeGenerator = new DefaultCodeGenerator(HashingAlgorithm.SHA1, 6);
-    return new DefaultCodeVerifier(codeGenerator, timeProvider);
-}
+    public CodeVerifier codeVerifier() {
+        TimeProvider timeProvider = new SystemTimeProvider();
+        DefaultCodeGenerator codeGenerator = new DefaultCodeGenerator(HashingAlgorithm.SHA1, 6);
+        // A classe retornada aqui é DefaultCodeVerifier, que implementa CodeVerifier
+        return new DefaultCodeVerifier(codeGenerator, timeProvider);
+    }
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/auth/**", "/h2-console/**").permitAll() // Endpoints de autenticação e H2 console públicos
-                        .anyRequest().authenticated() // Todas as outras requisições precisam de autenticação
+                        .requestMatchers("/api/auth/**", "/h2-console/**").permitAll()
+                        .anyRequest().authenticated()
                 )
-                .headers(headers -> headers.frameOptions(frame -> frame.sameOrigin())); // Necessário para o H2 Console
+                .headers(headers -> headers.frameOptions(frame -> frame.sameOrigin()));
         return http.build();
     }
 

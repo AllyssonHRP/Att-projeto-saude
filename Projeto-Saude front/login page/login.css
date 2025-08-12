@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* CENTRALIZAÇÃO DO FORMULÁRIO NO CENTRO DA TELA */
+  body {
+    background-image: url('WhatsApp\ Image\ 2025-04-30\ at\ 21.25.27.jpeg') ;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', sans-serif;
+    
+  }
+  
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* leve escurecimento */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .container {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    overflow-y: auto;
+    max-height: 90vh;
+}
+  
+  .form h2 {
+    margin-bottom: 0.5rem;
+    color: #2a7f62;
+}
+  
+  .form p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+  
+  .form label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: bold;
+    color: #333;
+}
+  
+  .form input {
+    width: 100%;
+    padding: 0.7rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+  
+.form button {
+  width: 100%;
+  padding: 0.7rem;
+  background-color: #2a7f62;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.form button:hover {
+  background-color: #256d55;
+}
+
+body {
+  background-color: #f0f4f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.login-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #2a7f62;
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.3rem;
+  color: #333;
+}
+
+form input {
+  width: 100%;
+  padding: 0.7rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+button {
+  width: 100%;
+  padding: 0.7rem;
+  background-color: #2a7f62;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #256d55;
+}
+
+.options {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.options a {
+  display: block;
+  margin-top: 0.5rem;
+  color: #2a7f62;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.options a:hover {
+  text-decoration: underline;
+}
