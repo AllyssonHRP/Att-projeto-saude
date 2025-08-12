@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Verificação 2FA</title>
+    <link rel="stylesheet" href="login.css"> </head>
+<body>
+    <div class="overlay">
+        <div class="container">
+            <form class="form" id="2fa-form">
+                <h2>Verificação de 2 Fatores</h2>
+                <p>Digite o código do seu aplicativo autenticador.</p>
+                <label for="code">Código de 6 dígitos</label>
+                <input type="text" id="code" required maxlength="6">
+                <button type="submit">Verificar</button>
+            </form>
+        </div>
+    </div>
+    <script src="2fa.js"></script>
+</body>
+</html>
